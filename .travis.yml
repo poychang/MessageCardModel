@@ -4,12 +4,14 @@ os: linux
 dist: trusty
 dotnet: 2.0.0
 script:
-  - dotnet build -c Release
-  - dotnet pack -c Release
+    - dotnet build -c Release
+    - dotnet pack -c Release
 deploy:
-  skip_cleanup: true
-  provider: script
-  script: dotnet nuget push MessageCardModel/bin/Release/MessageCardModel.*.nupkg --api-key $NUGET_API_KEY
-  on:
-    tags: true
-    condition: $TRAVIS_TAG =~ ^(\d+\.)?(\d+\.)?(\*|\d+)$
+    - provider: script
+      skip_cleanup: true
+      script: dotnet nuget push MessageCardModel/bin/Release/MessageCardModel.*.nupkg --api-key $NUGET_API_KEY --source nuget.org
+      on:
+          tags: true
+          branches:
+              only:
+                  - master
