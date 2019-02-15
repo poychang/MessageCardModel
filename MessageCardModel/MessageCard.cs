@@ -12,11 +12,11 @@ namespace MessageCardModel
         [JsonProperty("@context")]
         public const string Context = "http://schema.org/extensions";
         
-        [JsonProperty("summary")]
-        public string Summary { get; set; }
-        
         [JsonProperty("themeColor")]
         public string ThemeColor { get; set; }
+        
+        [JsonProperty("summary")]
+        public string Summary { get; set; }
         
         [JsonProperty("title")]
         public string Title { get; set; }
