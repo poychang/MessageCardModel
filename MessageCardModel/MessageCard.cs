@@ -20,6 +20,9 @@ namespace MessageCardModel
         
         [JsonProperty("title")]
         public string Title { get; set; }
+
+        [JsonProperty("text")]
+        public string Text { get; set; }
         
         [JsonProperty("sections")]
         public IEnumerable<Section> Sections { get; set; }
