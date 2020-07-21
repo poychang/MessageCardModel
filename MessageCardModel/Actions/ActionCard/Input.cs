@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace MessageCardModel.Actions.ActionCard
 {
@@ -8,7 +8,7 @@ namespace MessageCardModel.Actions.ActionCard
         /// Uniquely identifies the input so it is possible to reference it in
         /// the URL or body of an <see cref="HttpPostAction" /> action.
         /// </summary>
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
         
         /// <summary>
@@ -16,13 +16,13 @@ namespace MessageCardModel.Actions.ActionCard
         /// are able to take an action that would take the value of the input
         /// as a parameter.
         /// </summary>
-        [JsonProperty("isRequired")]
+        [JsonPropertyName("isRequired")]
         public bool Required { get; set; }
         
         /// <summary>
         /// Defines a title for the input.
         /// </summary>
-        [JsonProperty("title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
         
         /// <summary>
@@ -30,7 +30,7 @@ namespace MessageCardModel.Actions.ActionCard
         /// For multi-choice inputs, value must be equal to the value
         /// property of one of the input's choices.
         /// </summary>
-        [JsonProperty("value")]
+        [JsonPropertyName("value")]
         public string Value { get; set; }
     }
 }

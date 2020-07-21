@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace MessageCardModel.Actions.ActionCard
 {
@@ -8,7 +8,7 @@ namespace MessageCardModel.Actions.ActionCard
         /// Indicates whether the date input should allow for the selection of
         /// a time in addition to the date.
         /// </summary>
-        [JsonProperty("includeTime")]
+        [JsonPropertyName("includeTime")]
         public bool IncludeTime { get; set; }
     }
 }

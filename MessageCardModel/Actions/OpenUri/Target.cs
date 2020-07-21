@@ -1,15 +1,14 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+﻿using System.Text.Json.Serialization;
 
 namespace MessageCardModel.Actions.OpenUri
 {
     public class Target
     {
-        [JsonProperty("os")]
-        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonPropertyName("os")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public TargetOs OS { get; set; } = TargetOs.Default;
         
-        [JsonProperty("uri")]
+        [JsonPropertyName("uri")]
         public string Uri { get; set; }
     }
 }

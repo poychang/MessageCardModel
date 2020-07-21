@@ -1,5 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace MessageCardModel.Actions
 {
@@ -9,7 +9,7 @@ namespace MessageCardModel.Actions
         /// Specifies the add-in ID of the required add-in.
         /// The add-in ID is found in the Id element in the add-in's manifest.
         /// </summary>
-        [JsonProperty("addInId")]
+        [JsonPropertyName("addInId")]
         public Guid AddInId { get; set; }
         
         /// <summary>
@@ -20,7 +20,7 @@ namespace MessageCardModel.Actions
         /// MessageReadCommandSurface extension point, be of type Button, and
         /// the control's Action must be of type ShowTaskPane.
         /// </summary>
-        [JsonProperty("desktopCommandId")]
+        [JsonPropertyName("desktopCommandId")]
         public string DesktopCommandId { get; set; }
         
         /// <summary>
@@ -29,7 +29,7 @@ namespace MessageCardModel.Actions
         /// the add-in when the action is executed. This allows the action to
         /// pass initialization data to the add-in.
         /// </summary>
-        [JsonProperty("initializationContext")]
+        [JsonPropertyName("initializationContext")]
         public object InitializationContext { get; set; }
     }
 }

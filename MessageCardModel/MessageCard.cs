@@ -1,41 +1,42 @@
 ﻿using MessageCardModel.Actions;
-using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace MessageCardModel
 {
     public class MessageCard
     {
-        [JsonProperty("@type")]
-        public const string Type = "MessageCard";
+        [JsonPropertyName("@type")]
+        public string Type { get; set; } = "MessageCard";
 
-        [JsonProperty("@context")]
-        public const string Context = "http://schema.org/extensions";
+        [JsonPropertyName("@context")]
+        public string Context { get; set; } = "http://schema.org/extensions";
 
-        [JsonProperty("originator")]
+        [JsonPropertyName("originator")]
         public string Originator { get; set; }
 
-        [JsonProperty("summary")]
+        [JsonPropertyName("summary")]
         public string Summary { get; set; }
 
-        [JsonProperty("themeColor")]
+        [JsonPropertyName("themeColor")]
         public string ThemeColor { get; set; }
 
-        [JsonProperty("title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
-        [JsonProperty("text")]
+        [JsonPropertyName("text")]
         public string Text { get; set; }
 
-        [JsonProperty("sections")]
+        [JsonPropertyName("sections")]
         public IEnumerable<Section> Sections { get; set; }
 
-        [JsonProperty("potentialAction")]
+        [JsonPropertyName("potentialAction")]
         public IEnumerable<IAction> Actions { get; set; }
 
         public string ToJson()
         {
-            return JsonConvert.SerializeObject(this);
+            return JsonSerializer.Serialize(this);
         }
     }
 }

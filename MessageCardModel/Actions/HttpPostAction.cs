@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using MessageCardModel.Actions.HttpPost;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace MessageCardModel.Actions
 {
@@ -16,13 +15,13 @@ namespace MessageCardModel.Actions
         /// instead of "Due date" or "Add note" instead of "Note". In some
         /// cases, the noun itself just works because it is also a verb: "Comment"
         /// </remarks>
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public new string Name { get; set; }
         
         /// <summary>
         /// Defines the URL endpoint of the service that implements the action.
         /// </summary>
-        [JsonProperty("target")]
+        [JsonPropertyName("target")]
         public string Target { get; set; }
         
         /// <summary>
@@ -30,13 +29,13 @@ namespace MessageCardModel.Actions
         /// HTTP headers that will be emitted when sending the POST request
         /// to the target URL.
         /// </summary>
-        [JsonProperty("headers")]
+        [JsonPropertyName("headers")]
         public IEnumerable<Header> Headers { get; set; }
         
         /// <summary>
         /// The body of the POST request.
         /// </summary>
-        [JsonProperty("body")]
+        [JsonPropertyName("body")]
         public string Body { get; set; }
 
         /// <summary>
@@ -45,8 +44,8 @@ namespace MessageCardModel.Actions
         /// Valid values are application/json and application/x-www-form-urlencoded.
         /// If not specified, application/json is assumed.
         /// </summary>
-        [JsonProperty("bodyContentType")]
-        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonPropertyName("bodyContentType")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public BodyContentType BodyContentType { get; set; } = BodyContentType.Json;
     }
 }

@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using MessageCardModel.Actions.ActionCard;
-using Newtonsoft.Json;
 
 namespace MessageCardModel.Actions
 {
     public class ActionCardAction : BaseAction
     {
-        [JsonProperty("inputs")]
+        [JsonPropertyName("inputs")]
         public IEnumerable<Input> Inputs { get; set; }
         
-        [JsonProperty("actions")]
+        [JsonPropertyName("actions")]
         public IEnumerable<IEmbeddableAction> Actions { get; set; }
     }
 }

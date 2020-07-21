@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace MessageCardModel
 {
     public class Image
     {
-        [JsonProperty("image")]
+        [JsonPropertyName("image")]
         public string Uri { get; set; }
 
-        [JsonProperty("title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
     }
 }

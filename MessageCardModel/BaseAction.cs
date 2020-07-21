@@ -1,14 +1,14 @@
-﻿using MessageCardModel.Actions;
-using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
+using MessageCardModel.Actions;
 
 namespace MessageCardModel
 {
     public class BaseAction : IAction
     {
-        [JsonProperty("@type")]
+        [JsonPropertyName("@type")]
         public ActionType Type { get; set; }
         
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     }
 }

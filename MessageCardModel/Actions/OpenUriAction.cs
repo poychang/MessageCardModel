@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using MessageCardModel.Actions.OpenUri;
-using Newtonsoft.Json;
 
 namespace MessageCardModel.Actions
 {
     public class OpenUriAction : BaseAction, IEmbeddableAction
     {
-        [JsonProperty("targets")]
+        [JsonPropertyName("targets")]
         public IEnumerable<Target> Targets { get; set; }
     }
 }

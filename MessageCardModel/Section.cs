@@ -1,42 +1,42 @@
 ﻿using MessageCardModel.Actions;
-using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace MessageCardModel
 {
     public class Section
     {
-        [JsonProperty("title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
-        [JsonProperty("startGroup")]
+        [JsonPropertyName("startGroup")]
         public bool IsStartGroup { get; set; } = false;
 
-        [JsonProperty("activityTitle")]
+        [JsonPropertyName("activityTitle")]
         public string ActivityTitle { get; set; }
 
-        [JsonProperty("activitySubtitle")]
+        [JsonPropertyName("activitySubtitle")]
         public string ActivitySubtitle { get; set; }
 
-        [JsonProperty("activityText")]
+        [JsonPropertyName("activityText")]
         public string ActivityText { get; set; }
 
-        [JsonProperty("activityImage")]
+        [JsonPropertyName("activityImage")]
         public string ActivityImage { get; set; }
 
-        [JsonProperty("heroImage")]
+        [JsonPropertyName("heroImage")]
         public Image HeroImage { get; set; }
 
-        [JsonProperty("text")]
+        [JsonPropertyName("text")]
         public string Text { get; set; }
 
-        [JsonProperty("facts")]
+        [JsonPropertyName("facts")]
         public IEnumerable<Fact> Facts { get; set; }
 
-        [JsonProperty("images")]
+        [JsonPropertyName("images")]
         public IEnumerable<Image> Images { get; set; }
 
-        [JsonProperty("potentialAction")]
+        [JsonPropertyName("potentialAction")]
         public IEnumerable<IAction> Actions { get; set; }
     }
 }

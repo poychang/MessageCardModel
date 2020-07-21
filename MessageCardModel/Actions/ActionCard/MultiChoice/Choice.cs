@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace MessageCardModel.Actions.ActionCard.MultiChoice
 {
     public class Choice
     {
-        [JsonProperty("display")]
+        [JsonPropertyName("display")]
         public string Display { get; set; }
         
-        [JsonProperty("value")]
+        [JsonPropertyName("value")]
         public string Value { get; set; }
     }
 }

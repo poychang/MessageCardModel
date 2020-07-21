@@ -3,11 +3,11 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Poy Chang</Authors>
-    <PackageProjectUrl>https://github.com/poychang/Message-Card-Model</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/poychang/MessageCardModel</PackageProjectUrl>
     <Product>Message Card Model</Product>
     <Description>Message Cards are meant to provide easy to read, at-a-glance information that users can very quickly decipher and act upon when appropriate.
 This package help developer to design thier own Message Cards easier.</Description>
-    <Version>1.0.6</Version>
+    <Version>1.1.0</Version>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -19,7 +19,7 @@ This package help developer to design thier own Message Cards easier.</Descripti
 
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="System.Text.Json" Version="4.7.2" />
   </ItemGroup>
 
 </Project>

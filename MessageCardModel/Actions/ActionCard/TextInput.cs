@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace MessageCardModel.Actions.ActionCard
 {
@@ -7,13 +7,13 @@ namespace MessageCardModel.Actions.ActionCard
         /// <summary>
         /// Indicates whether the text input should accept multiple lines of text
         /// </summary>
-        [JsonProperty("isMultiline")]
+        [JsonPropertyName("isMultiline")]
         public bool Multiline { get; set; }
         
         /// <summary>
         /// Indicates the maximum number of characters that can be entered
         /// </summary>
-        [JsonProperty("maxLength")]
+        [JsonPropertyName("maxLength")]
         public int MaxLength { get; set; }
     }
 }

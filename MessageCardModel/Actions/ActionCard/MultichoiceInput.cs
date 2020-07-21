@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using MessageCardModel.Actions.ActionCard.MultiChoice;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace MessageCardModel.Actions.ActionCard
 {
@@ -10,7 +9,7 @@ namespace MessageCardModel.Actions.ActionCard
         /// <summary>
         /// Defines the values that can be selected for the multi choice input.
         /// </summary>
-        [JsonProperty("choices")]
+        [JsonPropertyName("choices")]
         public IEnumerable<Choice> Choices { get; set; }
 
         /// <summary>
@@ -20,11 +19,11 @@ namespace MessageCardModel.Actions.ActionCard
         /// 
         /// Default value is false.
         /// </summary>
-        [JsonProperty("isMultiSelect")]
+        [JsonPropertyName("isMultiSelect")]
         public bool MultiSelect { get; set; }
 
-        [JsonProperty("style")]
-        [JsonConverter(typeof(StringEnumConverter))]
+        [JsonPropertyName("style")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public Style Style { get; set; } = Style.Normal;
     }
 }
