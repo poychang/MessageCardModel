@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/poychang/Message-Card-Model.svg?branch=master)](https://travis-ci.com/poychang/MessageCardModel)
+[![Build Status](https://travis-ci.com/poychang/MessageCardModel.svg?branch=master)](https://travis-ci.com/poychang/MessageCardModel)
 [![NuGet version](https://badge.fury.io/nu/MessageCardModel.svg)](https://badge.fury.io/nu/MessageCardModel)
 
 # Message Card Model
