@@ -1,5 +1,6 @@
 ﻿using MessageCardModel.Actions;
 using System.Collections.Generic;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -36,7 +37,11 @@ namespace MessageCardModel
 
         public string ToJson()
         {
-            return JsonSerializer.Serialize(this);
+            var option = new JsonSerializerOptions
+            {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+            };
+            return JsonSerializer.Serialize(this, option);
         }
     }
 }
