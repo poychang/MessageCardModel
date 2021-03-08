@@ -13,8 +13,8 @@ namespace MessageCardModel.Test
         [TestMethod]
         public void TestRun_GitHubIssueOpened()
         {
-            var GitHubIssueOpenedJson = @"{""@type"":""MessageCard"",""@context"":""http://schema.org/extensions"",""originator"":null,""summary"":""Issue 176715375"",""themeColor"":""0078D7"",""title"":""Issue opened: \""Push notifications not working\"""",""text"":null,""sections"":[{""title"":null,""startGroup"":false,""activityTitle"":""Poy Chang"",""activitySubtitle"":""1/1/2020, 00:00am"",""activityText"":null,""activityImage"":""https://connectorsdemo.azurewebsites.net/images/MSC12_Oscar_002.jpg"",""heroImage"":null,""text"":""There is a problem with Push notifications, they don't seem to be picked up by the connector."",""facts"":[{""name"":""Repository"",""value"":""poychang\\test""},{""name"":""Issue #:"",""value"":""176715375""}],""images"":null,""potentialAction"":null}],""potentialAction"":[{""Type"":""ActionCard"",""Name"":""Add a comment""},{""Type"":""HttpPost"",""Name"":null},{""Type"":""OpenUri"",""Name"":""View in GitHub""}]}";
-            var GitHubIssueOpened = new MessageCard
+            var gitHubIssueOpenedJson = @"{""@type"":""MessageCard"",""@context"":""http://schema.org/extensions"",""originator"":null,""summary"":""Issue 176715375"",""themeColor"":""0078D7"",""title"":""Issue opened: \u0022Push notifications not working\u0022"",""text"":null,""sections"":[{""title"":null,""startGroup"":false,""activityTitle"":""Poy Chang"",""activitySubtitle"":""1/1/2020, 00:00am"",""activityText"":null,""activityImage"":""https://connectorsdemo.azurewebsites.net/images/MSC12_Oscar_002.jpg"",""heroImage"":null,""text"":""There is a problem with Push notifications, they don\u0027t seem to be picked up by the connector."",""facts"":[{""name"":""Repository"",""value"":""poychang\\test""},{""name"":""Issue #:"",""value"":""176715375""}],""images"":null,""potentialAction"":null}],""potentialAction"":[{""inputs"":[{""id"":""comment"",""isRequired"":false,""title"":""Enter your comment"",""value"":null}],""actions"":[{}],""@type"":0,""name"":""Add a comment""},{""name"":""Close"",""target"":""http://..."",""headers"":null,""body"":null,""bodyContentType"":""Json"",""@type"":1},{""targets"":[{""os"":""Default"",""uri"":""http://...""}],""@type"":2,""name"":""View in GitHub""}]}";
+            var gitHubIssueOpened = new MessageCard
             {
                 Summary = "Issue 176715375",
                 ThemeColor = "0078D7",
@@ -57,9 +57,11 @@ namespace MessageCardModel.Test
                     }
                 }
             };
+            var json = gitHubIssueOpened.ToJson();
 
-            Debug.WriteLine(GitHubIssueOpened.ToJson());
-            Assert.AreEqual(GitHubIssueOpenedJson, GitHubIssueOpened.ToJson());
+            Debug.WriteLine(json);
+            Assert.AreEqual(gitHubIssueOpenedJson, json);
+        }
 
         [TestMethod]
         public void Issue4_SerializeAllPropertiesOfDerivedActions()

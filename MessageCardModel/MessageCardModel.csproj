@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
         <Authors>Poy Chang</Authors>
         <PackageProjectUrl>https://github.com/poychang/MessageCardModel</PackageProjectUrl>
         <Product>Message Card Model</Product>
@@ -19,9 +19,8 @@
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
     </ItemGroup>
 
-
     <ItemGroup>
-        <PackageReference Include="System.Text.Json" Version="4.7.2" />
+        <PackageReference Include="System.Text.Json" Version="5.0.1" />
     </ItemGroup>
 
 </Project>

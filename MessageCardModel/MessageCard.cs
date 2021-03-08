@@ -1,7 +1,6 @@
 ﻿using MessageCardModel.Actions;
 using System;
 using System.Collections.Generic;
-using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -40,7 +39,7 @@ namespace MessageCardModel
         {
             var option = new JsonSerializerOptions
             {
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                //Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
             };
             option.Converters.Add(new ActionConverter());
             return JsonSerializer.Serialize(this, option);
