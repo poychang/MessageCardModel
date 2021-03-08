@@ -60,6 +60,59 @@ namespace MessageCardModel.Test
 
             Debug.WriteLine(GitHubIssueOpened.ToJson());
             Assert.AreEqual(GitHubIssueOpenedJson, GitHubIssueOpened.ToJson());
+
+        [TestMethod]
+        public void Issue4_SerializeAllPropertiesOfDerivedActions()
+        {
+            var msgCard = new MessageCard
+            {
+                Title = "Message Title (optional)",
+                Text = "This is a sing line **message** with markdown",
+                Sections = new[]
+                {
+                    new Section
+                    {
+                        Text = "Action Section",
+                        Actions = new[]
+                        {
+                            new ActionCardAction
+                            {
+                                Name = "ActionCardAction",
+                                Type = ActionType.ActionCard
+                            },
+                        }
+                    },
+                    new Section
+                    {
+                        Text = "Action Section",
+                        Actions = new[]
+                        {
+                            new HttpPostAction
+                            {
+                                Name = "HttpPostAction",
+                                Type = ActionType.HttpPost,
+                            },
+                        }
+                    },
+                    new Section
+                    {
+                        Text = "Action Section",
+                        Actions = new[]
+                        {
+                            new OpenUriAction
+                            {
+                                Name = "OpenUriAction",
+                                Type = ActionType.OpenUri,
+                                Targets = new List<Target>()
+                            },
+                        }
+                    },
+                },
+            };
+            var json = msgCard.ToJson();
+
+            Debug.WriteLine(json);
+            Assert.IsTrue(json.Contains("inputs") && json.Contains("headers") && json.Contains("targets"));
         }
     }
 }
