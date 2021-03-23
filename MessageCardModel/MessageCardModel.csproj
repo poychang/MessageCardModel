@@ -9,7 +9,7 @@
             Message Cards are meant to provide easy to read, at-a-glance information that users can very quickly decipher and act upon when appropriate.
             This package help developer to design thier own Message Cards easier.
         </Description>
-        <Version>1.1.1</Version>
+        <Version>1.1.2</Version>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
