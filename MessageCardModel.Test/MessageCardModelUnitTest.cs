@@ -116,5 +116,42 @@ namespace MessageCardModel.Test
             Debug.WriteLine(json);
             Assert.IsTrue(json.Contains("inputs") && json.Contains("headers") && json.Contains("targets"));
         }
+
+        [TestMethod]
+        public void Issue4_SerializeActionTypeWithEnumMemberAttribute()
+        {
+            var card = new MessageCard
+            {
+                Title = "This is the title",
+                Text = "Message text",
+                Sections = new[]
+                {
+                    new Section
+                    {
+                        Text = "ABC",
+                        Actions = new[]
+                        {
+                            new OpenUriAction
+                            {
+                                Name = "OpenUriAction",
+                                Type = ActionType.OpenUri,
+                                Targets = new List<Target>
+                                {
+                                    new Target
+                                    {
+                                        OS = TargetOs.Default,
+                                        Uri = "https://www.google.com"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            var json = card.ToJson();
+            Debug.WriteLine(json);
+            Assert.IsTrue(json.Contains("\"@type\":\"OpenUri\""));
+        }
     }
 }
