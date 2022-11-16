@@ -39,7 +39,7 @@ namespace MessageCardModel
         {
             var option = new JsonSerializerOptions
             {
-                Converters = { new JsonStringEnumConverter() },
+                Converters = { new JsonStringEnumMemberConverter() },
                 //Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
             };
             option.Converters.Add(new ActionConverter());

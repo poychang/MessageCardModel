@@ -153,5 +153,36 @@ namespace MessageCardModel.Test
             Debug.WriteLine(json);
             Assert.IsTrue(json.Contains("\"@type\":\"OpenUri\""));
         }
+
+        [TestMethod]
+        public void Issue6_SerializeTargetOsWithEnumMemberAttribute()
+        {
+            var card = new MessageCard
+            {
+                Title = "Title here",
+                Text = "Text here",
+                ThemeColor = "ff0000",
+                Context = "https://schema.org/extensions",
+                Type = "MessageCard",
+                Actions = new[] {
+                    new OpenUriAction
+                    {
+                        Name = "Open Website",
+                        Type = ActionType.OpenUri,
+                        Targets = new List<Target>
+                        {
+                            new Target
+                            {
+                                OS = TargetOs.Default,
+                                Uri = "https://a.good.site/"
+                            }
+                        }
+                    }
+                }
+            };
+            var json = card.ToJson();
+            Debug.WriteLine(json);
+            Assert.IsTrue(json.Contains("\"os\":\"default\""));
+        }
     }
 }
