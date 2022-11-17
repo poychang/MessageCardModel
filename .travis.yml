@@ -1,7 +1,7 @@
 language: csharp
 mono: none
 os: linux
-dotnet: 5.0
+dotnet: 6.0
 script:
     - dotnet build -c Release
     - dotnet pack -c Release
