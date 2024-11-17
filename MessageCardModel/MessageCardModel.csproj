@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;net6.0;net8.0</TargetFrameworks>
         <Authors>Poy Chang</Authors>
         <PackageProjectUrl>https://github.com/poychang/MessageCardModel</PackageProjectUrl>
         <Product>Message Card Model</Product>
@@ -9,7 +9,7 @@
             Message Cards are meant to provide easy to read, at-a-glance information that users can very quickly decipher and act upon when appropriate.
             This package help developer to design thier own Message Cards easier.
         </Description>
-        <Version>1.1.4</Version>
+        <Version>1.1.5</Version>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -18,11 +18,11 @@
 
     <ItemGroup>
         <PackageReference Include="Macross.Json.Extensions" Version="3.0.0" />
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="System.Text.Json" Version="8.0.5" />
+        <PackageReference Include="System.Text.Json" Version="8.0.*" />
     </ItemGroup>
 
 </Project>
