@@ -1,7 +1,6 @@
-[![Build Status](https://travis-ci.com/poychang/MessageCardModel.svg?branch=master)](https://travis-ci.com/poychang/MessageCardModel)
-[![NuGet version](https://badge.fury.io/nu/MessageCardModel.svg)](https://badge.fury.io/nu/MessageCardModel)
-
 # Message Card Model
+
+[![NuGet version](https://badge.fury.io/nu/MessageCardModel.svg)](https://badge.fury.io/nu/MessageCardModel)
 
 Message Cards are meant to provide easy to read, at-a-glance information that users can very quickly decipher and act upon when appropriate.
 This package help developer to design thier own Message Cards easier.
